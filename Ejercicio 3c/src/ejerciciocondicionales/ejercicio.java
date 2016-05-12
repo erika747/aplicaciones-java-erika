@@ -113,16 +113,16 @@ public class ejercicio {
 					if(resto10==0){
 						//System.out.println("Tu numero es multiple de 10");
 						if (c>100){
-							System.out.println("Tu numero es negativo, par, no es multiple de 5, es multiple de 5 y es mayor de 100");
+							System.out.println("Tu numero es negativo, par, no es multiple de 5, es multiple de 10 y es mayor de 100");
 						}else{
 							System.out.println("Tu numero es negativo, par, no es multiple de 5, es multiple de 10 y es menor de 100");
 						}
 					}else{
 						//System.out.println("tu numero no es multiple de 10");
 						if(c>100){
-							System.out.println("Tu numero es negativo, par, no es es mayor de 100");
+							System.out.println("Tu numero es negativo, par, no es multiple de 5, no es multiple de 10 y es es mayor de 100");
 						}else{
-							System.out.println("Tu numero es menor de 100");
+							System.out.println("Tu numero es negativo, par, no es multiple de 5, no es multiple de 10 y es menor de 100");
 						}
 					}
 				}
@@ -133,16 +133,16 @@ public class ejercicio {
 					if (resto10==0){
 						//System.out.println("Tu numero es multiple de 10");
 						if (c>100){
-							System.out.println("Tu numero es mayor de 100");
+							System.out.println("Tu numero es negativo, impar, es multiple de 5, es multiple de 10 y es mayor de 100");
 						}else{
-							System.out.println("Tu numero es menor de 100");
+							System.out.println("Tu numero es negativo, impar, es multiple de 5, es multiple de 10 y es menor de 100");
 						}
 					}else{
 						//System.out.println("Tu numero no es multiple de 10");
 						if(c>100){
-							System.out.println("Tu numero es mayor que 100");
+							System.out.println("Tu numero es negativo, impar, es multiple de 5, no es multiple de 10 y es mayor que 100");
 						}else{
-							System.out.println("Tu numero es menor que 100");
+							System.out.println("Tu numero es negativo, impar, es multiple de 5, no es multiple de 10 y es menor que 100");
 						}
 					}
 				}else{
@@ -150,16 +150,16 @@ public class ejercicio {
 					if(resto10==0){
 						//System.out.println("Tu numero es multiple de 10");
 						if(c>100){
-							System.out.println("Tu numero es mayor de 100");
+							System.out.println("Tu numero es negativo, impar, no es multiple de 5, es multiple de 10 y es mayor de 100");
 						}else{
-							System.out.println("Tu numero es menor de 100");
+							System.out.println("Tu numero es negativo, impar, no es multiple de 5, es multiple de 10 y es menor de 100");
 						}
 					}else{
 						//System.out.println("Tu numero no es multiple de 10");
 						if (c>100){
-							System.out.println("Tu numero es mayor de 100");
+							System.out.println("Tu numero es negatgivo, impar, no es multiple de 5, no es multiple de 10 y es mayor de 100");
 						}else{
-							System.out.println("Tu numero es menor de 100");
+							System.out.println("Tu numero es negativo, impar, no es multiple de 5, no es multiple de 10 y es menor de 100");
 						}
 					}
 				}
