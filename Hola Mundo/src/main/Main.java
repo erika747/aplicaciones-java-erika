@@ -7,6 +7,7 @@ public class Main {
 		if (a>10){
 			System.out.println("Hola");
 			System.out.println("He dicho Hola!!!!!");
+			//repito el cambio importante
 		}else{
 			System.out.println("Adios");
 		}
