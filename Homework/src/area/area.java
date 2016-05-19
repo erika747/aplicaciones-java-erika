@@ -1,5 +1,6 @@
 package area;
 
+import java.awt.Container;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -13,6 +14,18 @@ import java.awt.Font;
 
 public class area {
 
+	public static int modo;
+	public static double radius;
+	public static double heightsquare;
+	public static double heightrectangle;
+	public static double lengthrectangle;
+	public static double altura;
+	public static double base;
+	public static double heightparallelogram;
+	public static double baseparallelogram;
+	public static double heighttrapezium;
+	public static double basetrapezium;
+	public static double toptrapezium;
 	private JFrame frame;
 
 	/**
@@ -45,6 +58,8 @@ public class area {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1202, 790);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Container panel = new Panel();
+		frame.setContentPane(panel);
 		frame.getContentPane().setLayout(null);
 		
 		JButton btnsquare = new JButton("Square");
@@ -53,8 +68,9 @@ public class area {
 			public void actionPerformed(ActionEvent e) {
 				String asquare = JOptionPane.showInputDialog("Introduce the height of the square");
 				String dsquare = JOptionPane.showInputDialog("Introduce the units");
-				double bsquare = Double.parseDouble(asquare);
-				double csquare = bsquare*bsquare;
+				heightsquare = Double.parseDouble(asquare);
+				area.modo = 2;
+				double csquare = heightsquare*heightsquare;
 				JOptionPane.showMessageDialog(null, "The area is: " + csquare + dsquare + " squared.");
 			}
 		});
@@ -67,9 +83,10 @@ public class area {
 				String arect = JOptionPane.showInputDialog("Introduce the height of the rectangle");
 				String brect = JOptionPane.showInputDialog("Introduce the base length of the rectangle");
 				String crect = JOptionPane.showInputDialog("Introduce the units");
-				double drect = Double.parseDouble(arect);
-				double eforrect = Double.parseDouble(brect);
-				double frect = drect*eforrect;
+				 heightrectangle = Double.parseDouble(arect);
+				 lengthrectangle = Double.parseDouble(brect);
+				 area.modo = 3;
+				double frect = heightrectangle*lengthrectangle;
 				JOptionPane.showMessageDialog(null, "The area is: " + frect + crect + " squared.");
 			}
 		});
@@ -83,9 +100,10 @@ public class area {
 				String atri = JOptionPane.showInputDialog("Introduce the height of the triangle");
 				String btri = JOptionPane.showInputDialog("Introduce the base length of the triangle");
 				String ctri = JOptionPane.showInputDialog("Introduce the units");
-				double dtri = Double.parseDouble(atri);
-				double etri = Double.parseDouble(btri);
-				double ftri = dtri*etri;
+				 altura = Double.parseDouble(atri);
+				 base = Double.parseDouble(btri);
+				area.modo = 4;
+				double ftri = altura*base;
 				double gtri = ftri/2;
 				JOptionPane.showMessageDialog(null, "The area is: " + gtri + ctri + " squared.");
 				
@@ -102,9 +120,10 @@ public class area {
 				String apara = JOptionPane.showInputDialog("Introduce the height of the parallelogram");
 				String bpara = JOptionPane.showInputDialog("Introduce the base lenght of the parallelogram");
 				String cpara = JOptionPane.showInputDialog("Introduce the units");
-				double dpara = Double.parseDouble(apara);
-				double epara = Double.parseDouble(bpara);
-				double fpara = dpara*epara;
+				heightparallelogram = Double.parseDouble(apara);
+				baseparallelogram = Double.parseDouble(bpara);
+				area.modo = 5;
+				double fpara = heightparallelogram*baseparallelogram;
 				JOptionPane.showMessageDialog(null, "The area is: " + fpara + cpara + " squared.");
 			}
 		});
@@ -119,12 +138,13 @@ public class area {
 				String btrape = JOptionPane.showInputDialog("Introduce the top length of the trapezium");
 				String ctrape = JOptionPane.showInputDialog("Inrtoduce the height of the trapezium");
 				String dtrape = JOptionPane.showInputDialog("Introduce the units");
-				double etrape = Double.parseDouble(atrape);
-				double ftrape = Double.parseDouble(btrape);
-				double gtrape = Double.parseDouble(ctrape);
-				double htrape = etrape+ftrape;
+				basetrapezium = Double.parseDouble(atrape);
+				toptrapezium = Double.parseDouble(btrape);
+				heighttrapezium = Double.parseDouble(ctrape);
+				area.modo = 6;
+				double htrape = basetrapezium+toptrapezium;
 				double itrape = htrape/2;
-				double jtrape = itrape*gtrape;
+				double jtrape = itrape*heighttrapezium;
 				JOptionPane.showMessageDialog(null, "The area is: " + jtrape + dtrape + " squared.");
 			}
 		});
@@ -136,8 +156,9 @@ public class area {
 			public void actionPerformed(ActionEvent e) {
 				String acirc = JOptionPane.showInputDialog("Introduce the radius");
 				String bcirc = JOptionPane.showInputDialog("Introduce the units");
-				double ccirc = Double.parseDouble(acirc);
-				double dcirc = ccirc*ccirc;
+				radius = Double.parseDouble(acirc);
+				area.modo = 1;
+				double dcirc = radius*radius;
 				double ecirc = dcirc*3.1416;
 				JOptionPane.showMessageDialog(null, "The area is: " + ecirc + bcirc + " squared.");
 			}
@@ -146,8 +167,6 @@ public class area {
 		btncircle.setBounds(73, 282, 148, 39);
 		frame.getContentPane().add(btncircle);
 		
-		JLabel lblChooseTheShape = new JLabel("Choose the shape you want the area of");
-		lblChooseTheShape.setBounds(262, 53, 529, 45);
-		frame.getContentPane().add(lblChooseTheShape);
+		
 	}
 }
