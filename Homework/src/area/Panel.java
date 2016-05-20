@@ -73,6 +73,7 @@ public class Panel extends JPanel{
 			e.addPoint((int)x2, (int)y2);
 			e.addPoint((int) x3, (int) y3);
 			e.addPoint((int) x4, (int) y4);
+			g.fillPolygon(e);
 		}
 		repaint();
 	}
