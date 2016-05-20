@@ -2,10 +2,16 @@ package pin;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.JButton;
+import javax.swing.JPanel;
 
 public class BotonGuay extends JButton{
+
 
 	private Color color;
 	private Color colorActivado = new Color(255,0,0,128);
@@ -16,10 +22,12 @@ public class BotonGuay extends JButton{
 		this.color=color;
 	}
 
+	@SuppressWarnings("serial")
 	@Override
 	public void paint(Graphics g) {
 		super.paint(g);
 		
+			
 		if(activado){
 			g.setColor(colorActivado);
 		}else{
@@ -44,5 +52,4 @@ public class BotonGuay extends JButton{
 		activado = false;
 
 	}
-
-}
+		}

@@ -49,6 +49,7 @@ public class Pincorrecto {
 		String componente = JOptionPane.showInputDialog("¿Que componente arduino vas a utilizar?");
 		
 		
+		
 		BotonGuay btnpin0 = new BotonGuay("pin 0", new Color(0,255,0,128));
 		
 		btnpin0.addActionListener(new ActionListener() {
