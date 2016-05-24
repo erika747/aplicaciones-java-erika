@@ -45,6 +45,7 @@ public class Pincorrecto {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 879, 538);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setContentPane(new Panel());
 		frame.getContentPane().setLayout(null);
 		String componente = JOptionPane.showInputDialog("¿Que componente arduino vas a utilizar?");
 		

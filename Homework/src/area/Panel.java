@@ -11,21 +11,14 @@ import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 public class Panel extends JPanel{
-	Image img = null;
-	public Panel(){
-		try {
-			img = ImageIO.read(new File("imgres.png"));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+	
+	
 	@Override
 	public void paint(Graphics g){
 		super.paint(g);
 		if(area.modo==1){
 			g.fillOval(200,  400,  (int)area.radius, (int)area.radius);
-			g.drawImage(img, 0, 0, null);
+			
 		}
 		if (area.modo == 2){
 			g.fillRect(200, 400, (int)area.heightsquare, (int)area.heightsquare);
