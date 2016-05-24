@@ -15,7 +15,7 @@ public class Panel extends JPanel {
 
 	public Panel(){
 		try {
-			img = ImageIO.read(new File("imagen de arduino.png"));
+			img = ImageIO.read(new File("arduinounor3.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
