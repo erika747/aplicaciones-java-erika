@@ -296,7 +296,7 @@ public class Pincorrecto {
 				}
 			}
 		});
-		btnpina0.setBounds(47, 867, 89, 23);
+		btnpina0.setBounds(820, 716, 24, 24);
 		frame.getContentPane().add(btnpina0);
 		
 		BotonGuay btnpina1 = new BotonGuay("pin A1", new Color(0,255,0,128));
@@ -311,7 +311,7 @@ public class Pincorrecto {
 				}
 			}
 		});
-		btnpina1.setBounds(159, 867, 89, 23);
+		btnpina1.setBounds(854, 716, 24, 24);
 		frame.getContentPane().add(btnpina1);
 		
 		BotonGuay btnpina2 = new BotonGuay("pin A2", new Color(0,255,0,128));
@@ -326,7 +326,7 @@ public class Pincorrecto {
 				}
 			}
 		});
-		btnpina2.setBounds(267, 867, 89, 23);
+		btnpina2.setBounds(890, 716, 24, 24);
 		frame.getContentPane().add(btnpina2);
 		
 		BotonGuay btnpina3 = new BotonGuay("pin A3", new Color(0,255,0,128));
@@ -341,7 +341,7 @@ public class Pincorrecto {
 				}
 			}
 		});
-		btnpina3.setBounds(378, 867, 89, 23);
+		btnpina3.setBounds(928, 716, 24, 24);
 		frame.getContentPane().add(btnpina3);
 		
 		BotonGuay btnpina4 = new BotonGuay("pin A4", new Color(0,255,0,128));
@@ -356,7 +356,7 @@ public class Pincorrecto {
 				}
 			}
 		});
-		btnpina4.setBounds(492, 867, 89, 23);
+		btnpina4.setBounds(967, 716, 24, 24);
 		frame.getContentPane().add(btnpina4);
 		
 		BotonGuay btnpina5 = new BotonGuay("pin A5", new Color(0,255,0,128));
@@ -371,7 +371,7 @@ public class Pincorrecto {
 				}
 			}
 		});
-		btnpina5.setBounds(607, 867, 89, 23);
+		btnpina5.setBounds(1000, 716, 24, 24);
 		frame.getContentPane().add(btnpina5);
 	}
 }
