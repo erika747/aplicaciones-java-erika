@@ -17,10 +17,18 @@ public class Panel extends JPanel{
 	private float y2;
 	private float x3;
 	private float y3;
+	private float x4;
+	private float y4;
+	private float x5;
+	private float y5;
 	private float vx3 = 0.6f;
 	private float vy3 = 0.4f;
 	private float vx2 = 0.7f;
 	private float vy2 = 0.6f;
+	private float vx4 = 0.5f;
+	private float vy4 = 0.4f;
+	private float vx5 = 0.4f;
+	private float vy5 = 0.3f;
 	private float w = 10f;
 	private float h = 10f;
 	private float vh = 0.01f;
@@ -33,10 +41,8 @@ public class Panel extends JPanel{
 	private float yt2 = 200f;
 	private float xt3 = 300f;
 	private float yt3 = 200f;
-	private float xc1 = x -100;
-	private float xc2 = x2 -100;
-	float distance;
-	
+	private float width = 100;
+	private float height = 100;
 	
 	
 	Color rojo = new Color(255, 255, 0);
@@ -44,21 +50,21 @@ public class Panel extends JPanel{
 	@Override
 	public void paint(Graphics g){
 		super.paint(g);
-		if (xc1 > xc2){
-			distance = xc1 - xc2;
-		}else{
-			distance = xc2 - xc1;
-		}
-		g.setColor(rojo);
-		g.fillOval((int) x, (int) y, 100, 100);
-		g.setColor(rojo2);
-		g.fillOval((int)x2, (int) y2, 100, 100);
 		g.setColor(Color.CYAN);
+		g.fillOval((int) x, (int) y, 100, 100);
+		g.setColor(Color.PINK);
+		g.fillOval((int)x2, (int) y2, 100, 100);
+		g.setColor(Color.YELLOW);
 		g.fillRect((int)x3, (int) y3, (int)w,(int) h);
+		g.setColor(rojo);
+		g.fillRect((int)x4, (int) y4,(int) width, (int) height);
+		g.setColor(rojo2);
+		g.fillRect((int)x5, (int) y5, (int)width, (int) height);
 		Polygon p = new Polygon();
 		p.addPoint((int)xt1, (int) yt1);
 		p.addPoint((int)xt2, (int) yt2);
 		p.addPoint((int)xt3, (int)yt3);
+		g.setColor(Color.MAGENTA);
 		g.fillPolygon(p);
 		x=x+vx;
 		y = y + vy;
@@ -66,6 +72,10 @@ public class Panel extends JPanel{
 		y2 = y2 + vy2;
 		x3 = x3 + vx3;
 		y3 = y3 + vy3;
+		x4 = x4 + vx4;
+		x5 = x5 + vx5;
+		y4 = y4 + vy4;
+		y5 = y5 +vy5;
 		w = w + vw;
 		h = h + vh;
 		xt1 = xt1 + tvx;
@@ -74,11 +84,40 @@ public class Panel extends JPanel{
 		yt2 = yt2 + tvy;
 		xt3 = xt3 + tvx;
 		yt3 = yt3 + tvy;
-		if (distance < xc2){
-			rojo = new Color(255, 0, 0);
-			rojo2 = new Color(255, 0,0);
+		if (x4 < x5 + width &&
+				   x4 + width > x5 &&
+				   y4 < y5 + height &&
+				   height + y4 > y5) {
+				    rojo = new Color(255,0,0);
+				    rojo2 = new Color(255, 0,0);
+				}else{
+					rojo = new Color(255, 155, 0);
+					rojo2 = new Color(0,0,255);
+				}
+		if (x4 > 1500){
+			vx4 = vx4 *-1;
 		}
-		
+		if (x4 <0){
+			vx4 = vx4 *-1;
+		}
+		if (y4 > 750){
+			vy4 = vy4 *-1;
+		}
+		if(y4 <0){
+			vy4 = vy4 * -1;
+		}
+		if (x5 > 1500){
+			vx5 = vx5 * -1;
+		}
+		if (x5 < 0){
+			vx5 = vx5 * -1;
+		}
+		if(y5>750){
+			vy5 = vy5 * -1;
+		}
+		if ( y5 < 0){
+			vy5 = vy5 * -1;
+		}
 		if (xt3>1500){
 			tvx = tvx*-1;
 		}
