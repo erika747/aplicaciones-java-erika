@@ -24,6 +24,16 @@ public class Panel extends JPanel{
 	private float h = 10f;
 	private float vh = 0.01f;
 	private float vw = 0.01f;
+	private float vx4 = 0.01f;
+	private float vx5 = 0.03f;
+	private float vy4 = 0.05f;
+	private float vy5 = 0.02f;
+	private float x4;
+	private float x5;
+	private float y4;
+	private float y5;
+	private float width = 100;
+	private float height = 100;
 	
 
 	@Override
@@ -36,22 +46,51 @@ public class Panel extends JPanel{
 		g.fillOval((int)x2, (int) y2, 100, 100);
 		g.setColor(Color.CYAN);
 		g.fillRect((int)x3, (int) y3, (int)w,(int) h);
+		g.fillRect((int)x4, (int) y4, (int)width, (int)height);
+		g.fillRect((int)x5,(int) y5, (int)width, (int) height);
 		x=x+vx;
 		y = y + vy;
 		x2 = x2 + vx2;
 		y2 = y2 + vy2;
 		x3 = x3 + vx3;
 		y3 = y3 + vy3;
+		x4 = x4 + vx4;
+		x5 = x5 + vx5;
+		y4 = y4 + vy4;
+		y5 = y5 + vy5;
 		w = w + vw;
 		h = h + vh;
-		
-		if (x > 500){
+		if (x4 > 1000){
+			vx4 = vx4 * -1;
+		}
+		if  (x4 < 0){
+			vx4 = vx4 * -1;
+		}
+		if (y4 > 700){
+			vy4 = vy4 * -1;
+		}
+		if ( y4  < 0){
+			vy4 = vy4 * -1;
+		}
+		if ( x5 > 1000){
+			vx5 = vx5 * -1;
+		}
+		if ( x5 < 0 ){
+			vx5 = vx5 * -1;
+		}
+		if ( y5 > 700){
+			vy5 = vy5 * -1;
+		}
+		if (y5 < 0){
+			vy5 = vy5 * -1;
+		}
+		if (x > 1000){
 			vx = vx * -1;
 		}
 		if (x < 0){
 			vx = vx * -1;
 		}
-		if (y > 500){
+		if (y > 700){
 			vy = vy * -1;
 		}
 		if (y < 0){
@@ -59,26 +98,26 @@ public class Panel extends JPanel{
 		}
 		
 		
-		if (x2 > 500){
+		if (x2 > 1000){
 			vx2 = vx2 *-1;
 		}
 		if (x2 < 00){
 			vx2 = vx2 *-1;
 		}
-		if (y2 > 500){
+		if (y2 > 700){
 			vy2 = vy2 * -1;
 		}
 		if (y2 < 0){
 			vy2 = vy2 * -1;
 		}
 		
-		if (x3 > 500){
+		if (x3 > 1000){
 			vx3 = vx3 * -1;
 		}
 		if (x3 < 0){
 			vx3 = vx3*-1;
 		}
-		if (y3 > 500){
+		if (y3 > 700){
 			vy3 = vy3 *-1;
 		}
 		if (y3 < 0){
