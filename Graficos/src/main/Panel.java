@@ -49,7 +49,7 @@ public class Panel extends JPanel{
 
 	private void dibujarTexto(Graphics g) {
 		g.setColor(Color.YELLOW);
-		g.drawString("y = " + y, 50, 750);
+		g.drawString("y = " + y[0], 50, 750);
 		g.drawString("x = "+x[0], 50, 720);
 		g.setColor(Color.BLUE);
 		g.drawString("y = " + y[1], 350, 750);
