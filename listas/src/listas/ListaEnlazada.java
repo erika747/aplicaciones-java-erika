@@ -38,32 +38,82 @@ public class ListaEnlazada<T> implements Lista<T>{
 
 	@Override
 	public void set(T elemento, int posicion) {
-		// TODO Auto-generated method stub
+		
+		Nodo<T> puntero = primero;
+		
+		int i = 0;
+		while(puntero != null){
+			if(i == posicion){
+				puntero.elemento = elemento;
+				return;
+			}
+			puntero = puntero.siguiente;
+			i++;
+		}
 		
 	}
 
 	@Override
 	public void insert(T elemento, int posicion) {
-		// TODO Auto-generated method stub
+		Nodo<T> nuevo = new Nodo(elemento);
+		if(posicion == 0){
+			nuevo.siguiente = primero;
+			primero = nuevo;
+			return;
+		}
+		if(posicion == size-1){
+			add(elemento);
+			return;
+		}
+		if(posicion >= size){
+			throw new IndexOutOfBoundsException("Index: "+posicion);
+		}
+		Nodo<T> puntero = primero;
+		int i = 0;
+		while(puntero != null){
+			if(i == posicion-1){
+				nuevo.siguiente = puntero.siguiente;
+				puntero.siguiente = nuevo;
+				size++;
+				return;
+			}
+			puntero = puntero.siguiente;
+			i++;
+			
+		}
 		
 	}
 
 	@Override
 	public T remove(int index) {
-		// TODO Auto-generated method stub
+		Nodo<T> puntero = primero;
+		int i = 0;
+		while(puntero != null){
+			if(i == index-1){
+				Nodo<T> guardar = puntero.siguiente;
+				puntero.siguiente = puntero.siguiente.siguiente;
+				return guardar.elemento;
+			}
+			puntero = puntero.siguiente;
+			i++;
+		}
+		size--;
 		return null;
 	}
 
 	@Override
 	public void remove(T elemento) {
-		// TODO Auto-generated method stub
+		remove(indexOf(elemento));
+		
+		return;
+		
 		
 	}
 
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return size;
 	}
 
 	@Override
@@ -76,20 +126,48 @@ public class ListaEnlazada<T> implements Lista<T>{
 
 	@Override
 	public void clear() {
-		// TODO Auto-generated method stub
+		primero = null;
+		size = 0;
 		
 	}
 
 	@Override
 	public int indexOf(T elemento) {
-		// TODO Auto-generated method stub
-		return 0;
+		Nodo<T> puntero = primero;
+		int i = 0;
+		
+		while(puntero.elemento != elemento){
+			
+			puntero = puntero.siguiente;
+			i++;
+			
+			if(puntero == null){
+				return -1;
+			}
+			
+		}
+		return i;
 	}
 
 	@Override
 	public int lastIndexOf(T elemento) {
-		// TODO Auto-generated method stub
-		return 0;
+		Nodo<T> puntero = primero;
+		Nodo<T> chosen = null;
+		int i = 0;
+		
+		while(puntero != null){
+			if(puntero.elemento == elemento){
+				chosen = puntero;
+			}
+			puntero = puntero.siguiente;
+			i++;
+		}
+		if(chosen == null){
+			return -1;
+		}else{
+			return i;
+		}
+		
 	}
 	
 	private class Nodo<T> {
